@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import { ImageUrl } from '../../config/API';
+
 const Sidebar = (props) => {
     const [open, setOpen] = useState(true);
+    const {appname} = useParams()
     const [activeMenu,setActiveMenu] = useState({})
-    const navigate = useNavigate()
+    const navigate = useNavigate() 
     const Menus = [
       { title: "Home", src: "python.png" ,path:"/"},
       { title: "Myapp", src: "javascript.png" ,path:"/myapp"},
@@ -68,7 +70,7 @@ const Sidebar = (props) => {
       </ul>
     </div>
     <div className="flex-1 p-7 bg-black">
-      <h1 className="text-xl font-semibold text-white">{activeMenu.name}</h1>
+      <h1 className="text-xl font-semibold text-white">{`${activeMenu.name}`}</h1>
         {props.children}
     </div>
   </div>

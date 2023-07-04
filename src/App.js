@@ -8,6 +8,7 @@ import Dnd from "./components/Dnd/Dnd";
 import { Provider } from "react-redux";
 import store from "./redux/store/store"
 import "./App.css"
+import DetailMyApp from "./pages/MyApp/DetailMyApp";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Sidebar>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/myapp" element={<MyApp/>}/>
+              <Route path="/myapp"  element={<MyApp/>}/>
+              <Route path="/myapp/:appname" element={<DetailMyApp/>}/>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/dnd" element={<Dnd/>}/>
             </Routes>
